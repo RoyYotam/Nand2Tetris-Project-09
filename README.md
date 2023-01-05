@@ -1,5 +1,4 @@
 # Nand2Tetris-Project-09
-===========
 From NAND to tetris course, project 09 (A jack game).
 Nand2Tetris website: http://nand2tetris.org/
 
@@ -26,13 +25,17 @@ https://www.youtube.com/
 
 ## Images of the game
 The basket is moving,
-![game](./images/gamePage.png)
+
+<kbd>![game](./images/gamePage.png)</kbd>
 
 And you need to shot in time to score,
-![shot](./images/throwBall.png)
+  
+<kbd>![shot](./images/throwBall.png)</kbd>
 
 Cause if you miss, the game might be over...
-![miss](./images/missThrow.png)
+  
+<kbd>![miss](./images/missThrow.png)</kbd>
 
 Will you be able to stop? 
-![gameover](./images/gameOver.png)
+
+<kbd>![gameover](./images/gameOver.png)</kbd>
