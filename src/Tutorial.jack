@@ -90,6 +90,8 @@ class Tutorial {
 		do Tutorial.letterPause();
 		do Output.printString("o");
 		do Tutorial.letterPause();
+		do Output.printString("o");
+		do Tutorial.letterPause();
 		do Output.printString("t");
 		do Tutorial.letterPause();
 		do Output.printString(",");
