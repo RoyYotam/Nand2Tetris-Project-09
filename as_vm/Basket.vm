@@ -1,0 +1,444 @@
+function Basket.new 0
+push constant 4
+call Memory.alloc 1
+pop pointer 0
+push constant 0
+pop this 0
+push constant 0
+pop this 1
+push constant 0
+pop this 3
+push constant 5
+pop static 0
+push pointer 0
+call Basket.drawBasket 1
+pop temp 0
+push pointer 0
+return
+function Basket.incSpeed 0
+push argument 0
+pop pointer 0
+push static 0
+push argument 1
+add
+pop static 0
+push this 2
+push constant 0
+gt
+if-goto IF_TRUE0
+goto IF_FALSE0
+label IF_TRUE0
+push static 0
+pop this 2
+goto IF_END0
+label IF_FALSE0
+push static 0
+neg
+pop this 2
+label IF_END0
+push constant 0
+return
+function Basket.getX 0
+push argument 0
+pop pointer 0
+push this 0
+push constant 50
+add
+return
+function Basket.drawBasket 0
+push argument 0
+pop pointer 0
+push constant 0
+not
+call Screen.setColor 1
+pop temp 0
+push this 0
+push constant 50
+add
+push this 1
+push constant 80
+add
+push constant 28
+call Screen.drawCircle 3
+pop temp 0
+push this 0
+push this 1
+push this 0
+push constant 100
+add
+push this 1
+push constant 60
+add
+call Screen.drawRectangle 4
+pop temp 0
+push constant 0
+call Screen.setColor 1
+pop temp 0
+push this 0
+push constant 10
+add
+push this 1
+push constant 10
+add
+push this 0
+push constant 90
+add
+push this 1
+push constant 50
+add
+call Screen.drawRectangle 4
+pop temp 0
+push this 0
+push constant 50
+add
+push this 1
+push constant 80
+add
+push constant 20
+call Screen.drawCircle 3
+pop temp 0
+push constant 0
+not
+call Screen.setColor 1
+pop temp 0
+push this 0
+push constant 25
+add
+push this 1
+push constant 25
+add
+push this 0
+push constant 75
+add
+push this 1
+push constant 55
+add
+call Screen.drawRectangle 4
+pop temp 0
+push constant 0
+return
+function Basket.move 0
+push argument 0
+pop pointer 0
+push constant 55
+call Sys.wait 1
+pop temp 0
+push this 0
+push constant 380
+gt
+if-goto IF_TRUE0
+goto IF_FALSE0
+label IF_TRUE0
+push static 0
+neg
+pop this 2
+label IF_FALSE0
+push this 0
+push constant 30
+lt
+if-goto IF_TRUE1
+goto IF_FALSE1
+label IF_TRUE1
+push static 0
+pop this 2
+label IF_FALSE1
+push this 0
+push this 2
+add
+pop this 0
+push this 2
+push constant 0
+gt
+if-goto IF_TRUE2
+goto IF_FALSE2
+label IF_TRUE2
+push pointer 0
+call Basket.moveRight 1
+pop temp 0
+goto IF_END2
+label IF_FALSE2
+push pointer 0
+call Basket.moveLeft 1
+pop temp 0
+label IF_END2
+push constant 0
+return
+function Basket.drawHook 0
+push argument 0
+pop pointer 0
+push constant 0
+call Screen.setColor 1
+pop temp 0
+push this 0
+push constant 50
+add
+push this 2
+sub
+push this 1
+push constant 80
+add
+push constant 28
+call Screen.drawCircle 3
+pop temp 0
+push constant 0
+not
+call Screen.setColor 1
+pop temp 0
+push this 0
+push this 1
+push constant 51
+add
+push this 0
+push constant 100
+add
+push this 1
+push constant 65
+add
+call Screen.drawRectangle 4
+pop temp 0
+push this 0
+push constant 50
+add
+push this 1
+push constant 80
+add
+push constant 28
+call Screen.drawCircle 3
+pop temp 0
+push constant 0
+call Screen.setColor 1
+pop temp 0
+push this 0
+push constant 50
+add
+push this 1
+push constant 80
+add
+push constant 20
+call Screen.drawCircle 3
+pop temp 0
+push constant 0
+return
+function Basket.moveRight 0
+push argument 0
+pop pointer 0
+push pointer 0
+call Basket.drawHook 1
+pop temp 0
+push constant 0
+not
+call Screen.setColor 1
+pop temp 0
+push this 0
+push constant 75
+add
+push this 2
+sub
+push this 1
+push constant 25
+add
+push this 0
+push constant 75
+add
+push this 1
+push constant 55
+add
+call Screen.drawRectangle 4
+pop temp 0
+push this 0
+push constant 100
+add
+push this 2
+sub
+push this 1
+push this 0
+push constant 100
+add
+push this 1
+push constant 65
+add
+call Screen.drawRectangle 4
+pop temp 0
+push this 0
+push constant 10
+add
+push this 2
+sub
+push this 1
+push this 0
+push constant 10
+add
+push this 1
+push constant 65
+add
+call Screen.drawRectangle 4
+pop temp 0
+push constant 0
+call Screen.setColor 1
+pop temp 0
+push this 0
+push constant 25
+add
+push this 2
+sub
+push this 1
+push constant 25
+add
+push this 0
+push constant 25
+add
+push this 1
+push constant 50
+add
+call Screen.drawRectangle 4
+pop temp 0
+push this 0
+push this 2
+sub
+push this 1
+push this 0
+push this 1
+push constant 65
+add
+call Screen.drawRectangle 4
+pop temp 0
+push this 0
+push constant 90
+add
+push this 2
+sub
+push this 1
+push constant 10
+add
+push this 0
+push constant 90
+add
+push this 1
+push constant 50
+add
+call Screen.drawRectangle 4
+pop temp 0
+push constant 0
+return
+function Basket.moveLeft 0
+push argument 0
+pop pointer 0
+push constant 0
+not
+call Screen.setColor 1
+pop temp 0
+push this 0
+push constant 25
+add
+push this 1
+push constant 25
+add
+push this 0
+push constant 25
+add
+push this 2
+sub
+push this 1
+push constant 55
+add
+call Screen.drawRectangle 4
+pop temp 0
+push this 0
+push constant 90
+add
+push this 1
+push this 0
+push constant 90
+add
+push this 2
+sub
+push this 1
+push constant 65
+add
+call Screen.drawRectangle 4
+pop temp 0
+push this 0
+push this 1
+push this 0
+push this 2
+sub
+push this 1
+push constant 65
+add
+call Screen.drawRectangle 4
+pop temp 0
+push constant 0
+call Screen.setColor 1
+pop temp 0
+push this 0
+push constant 75
+add
+push this 1
+push constant 25
+add
+push this 0
+push constant 75
+add
+push this 2
+sub
+push this 1
+push constant 50
+add
+call Screen.drawRectangle 4
+pop temp 0
+push this 0
+push constant 100
+add
+push this 1
+push this 0
+push constant 100
+add
+push this 2
+sub
+push this 1
+push constant 65
+add
+call Screen.drawRectangle 4
+pop temp 0
+push this 0
+push constant 10
+add
+push this 1
+push constant 10
+add
+push this 0
+push constant 10
+add
+push this 2
+sub
+push this 1
+push constant 50
+add
+call Screen.drawRectangle 4
+pop temp 0
+push pointer 0
+call Basket.drawHook 1
+pop temp 0
+push constant 0
+return
+function Basket.clear 0
+push argument 0
+pop pointer 0
+push constant 0
+call Screen.setColor 1
+pop temp 0
+push this 0
+push this 1
+push this 0
+push constant 100
+add
+push this 1
+push constant 110
+add
+call Screen.drawRectangle 4
+pop temp 0
+push pointer 0
+call Memory.deAlloc 1
+pop temp 0
+push constant 0
+return
