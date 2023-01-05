@@ -26,13 +26,13 @@ https://www.youtube.com/
 
 ## Images of the game
 The basket is moving,
-![game](./images/flying-dino.png)
+![game](./images/gamePage.png)
 
 And you need to shot in time to score,
-![shot](./images/random-terrain.png)
+![shot](./images/throwBall.png)
 
 Cause if you miss, the game might be over...
-![miss](./images/win-frame.png)
+![miss](./images/missThrow.png)
 
 Will you be able to stop? 
-![gameover](./images/win-frame.png)
+![gameover](./images/gameOver.png)
