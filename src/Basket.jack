@@ -101,7 +101,14 @@ class Basket{
         do Screen.setColor(true);
 
         // fix board
-        do Screen.drawRectangle(x, y + 51, x + 100, y + 65);
+        if (change > 0) {
+            // moves right
+            do Screen.drawRectangle(x, y + 51, x + 100, y + 65);
+        } else {
+            // moves left
+            do Screen.drawRectangle(x, y + 51, x + 90, y + 65);
+        }
+        
         
         // circle
         do Screen.drawCircle(x + 50, y + 80, 28);
