@@ -10,8 +10,8 @@ As much as you score, the harder it becomes, will you beat your own high score?
 Download the software package from nand2tetris (https://www.nand2tetris.org/software)
 Also download all the files from as_vm, to a single directory of your choice. Then, in the VMEmulator, choose to open files, and select the entire directory where the .vm reside. Finally, switch 'Animate' to 'No Animation' and click run.
 
-## How to Play
-The game is very simple; you have to score as mush as you can.
+## How to play
+The game is simple; you have to score as mush as you can.
 In each game cycle you have five lives, while each miss reduces your lives by one; every score awards you with a point.
 Use the space bar to throw the ball, and ESC to quit.
 
@@ -24,11 +24,11 @@ https://www.youtube.com/
 (Currently unavailable)
 
 ## Images of the game
-The basket is moving,
+The basket is moving
 
 <kbd>![game](./images/gamePage.png)</kbd>
 
-And you need to shoot in time to score,
+And you need to shoot in time to score
   
 <kbd>![shoot](./images/throwBall.png)</kbd>
 
