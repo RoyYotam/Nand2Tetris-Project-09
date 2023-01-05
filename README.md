@@ -3,8 +3,8 @@ From NAND to tetris course, project 09 (A jack game).
 Nand2Tetris website: http://nand2tetris.org/
 
 ## Description
-A challenging, and addictive, shooting game basketball shots.
-As much as you score, the harder it becomes, can you beat your own high score?
+A challenging yet addictive shooting game.
+As much as you score, the harder it becomes, will you beat your own high score?
 
 ## Usage
 Download the software package from nand2tetris (https://www.nand2tetris.org/software)
@@ -28,9 +28,9 @@ The basket is moving,
 
 <kbd>![game](./images/gamePage.png)</kbd>
 
-And you need to shot in time to score,
+And you need to shoot in time to score,
   
-<kbd>![shot](./images/throwBall.png)</kbd>
+<kbd>![shoot](./images/throwBall.png)</kbd>
 
 Cause if you miss, the game might be over...
   
