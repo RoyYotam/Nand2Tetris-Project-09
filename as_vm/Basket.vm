@@ -184,6 +184,12 @@ push constant 0
 not
 call Screen.setColor 1
 pop temp 0
+push this 2
+push constant 0
+gt
+if-goto IF_TRUE0
+goto IF_FALSE0
+label IF_TRUE0
 push this 0
 push this 1
 push constant 51
@@ -196,6 +202,21 @@ push constant 65
 add
 call Screen.drawRectangle 4
 pop temp 0
+goto IF_END0
+label IF_FALSE0
+push this 0
+push this 1
+push constant 51
+add
+push this 0
+push constant 90
+add
+push this 1
+push constant 65
+add
+call Screen.drawRectangle 4
+pop temp 0
+label IF_END0
 push this 0
 push constant 50
 add
