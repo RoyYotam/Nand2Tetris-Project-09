@@ -1,0 +1,177 @@
+class Basket{
+    field int x, y, change, speed;
+    static int changeRate;
+    
+    constructor Basket new(){
+        let x = 0;
+        let y = 0;
+        let speed = 0;
+        let changeRate = 5;
+
+        do drawBasket();
+
+        
+        return this;
+    }
+
+    method void incSpeed(int newSpeed) {
+        /*
+            Set the moving speed of the basket.
+            I.E. we re-draw basket every @changeRate pixels.
+        */
+        
+        let changeRate = changeRate + newSpeed; 
+        if (change > 0) {
+            let change = changeRate;
+        } else {
+            let change = -changeRate;
+        }
+        return;
+    }
+
+    method int getX() {
+        // returning hook location.
+
+        return x + 50;
+    }
+
+
+    method void drawBasket() {
+        /*
+            Called once when the level start.
+        */
+        // Draw black
+        do Screen.setColor(true);
+        
+        // circle
+        do Screen.drawCircle(x + 50, y + 80, 28);
+        
+        // board
+        do Screen.drawRectangle(x, y, x + 100, y + 60);
+
+        // Draw white
+        do Screen.setColor(false);
+
+        // board
+        do Screen.drawRectangle(x + 10, y + 10, x + 90, y + 50);
+        
+        // circle
+        do Screen.drawCircle(x + 50, y + 80, 20);
+
+        // Draw black
+        do Screen.setColor(true);
+        
+        // board
+        do Screen.drawRectangle(x + 25, y + 25, x + 75, y + 55);
+        
+
+        return;
+    }
+
+
+    method void move() {
+
+        do Sys.wait(55);
+        if (x > 380) {
+            let change = -changeRate;
+        } 
+        if (x < 30) {
+            let change = changeRate;
+        }
+        let x = x + change;
+
+        if (change > 0) {
+            do moveRight();
+        } else {
+            do moveLeft();
+        }
+        return;
+    }
+
+    method void drawHook() {
+        /* ------------------------------------ */
+        // Draw white
+        do Screen.setColor(false);
+
+        // erase hook
+        do Screen.drawCircle(x + 50 - change, y + 80, 28);
+        
+
+        // Draw black
+        do Screen.setColor(true);
+
+        // fix board
+        do Screen.drawRectangle(x, y + 51, x + 100, y + 65);
+        
+        // circle
+        do Screen.drawCircle(x + 50, y + 80, 28);
+
+
+        // Draw white
+        do Screen.setColor(false);
+
+        // circle
+        do Screen.drawCircle(x + 50, y + 80, 20);
+        return;
+    }
+
+
+    method void moveRight() {
+        do drawHook();
+
+        // Draw black
+        do Screen.setColor(true);
+
+        // board
+        do Screen.drawRectangle(x + 75 - change, y + 25, x + 75, y + 55);
+        do Screen.drawRectangle(x + 100 - change, y, x + 100, y + 65);
+        do Screen.drawRectangle(x + 10 - change, y, x + 10, y + 65);
+
+        // Draw white
+        do Screen.setColor(false);
+
+        // board
+        do Screen.drawRectangle(x + 25 - change, y + 25, x + 25, y + 50);
+        do Screen.drawRectangle(x - change, y, x, y + 65);
+        do Screen.drawRectangle(x + 90 - change, y + 10, x + 90, y + 50);
+
+        //do drawHook();
+
+        return;
+    }
+
+    method void moveLeft() {
+        // Draw black
+        do Screen.setColor(true);
+
+        // board
+        do Screen.drawRectangle(x + 25, y + 25, x + 25 - change, y + 55);
+        do Screen.drawRectangle(x + 90, y, x + 90 - change, y + 65);
+        do Screen.drawRectangle(x, y, x - change, y + 65);
+
+        // Draw white
+        do Screen.setColor(false);
+
+        // board
+        do Screen.drawRectangle(x + 75, y + 25, x + 75 - change, y + 50);
+        do Screen.drawRectangle(x + 100, y, x + 100 - change, y + 65);
+        do Screen.drawRectangle(x + 10, y + 10, x + 10 - change, y + 50);
+
+        do drawHook();
+
+        return;
+    }
+
+    method void clear() {
+        // Draw white
+        do Screen.setColor(false);
+
+        // board
+        do Screen.drawRectangle(x, y, x + 100, y + 110);
+
+        do Memory.deAlloc(this);
+        
+        return;
+    }
+
+}

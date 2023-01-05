@@ -1,0 +1,238 @@
+class Tutorial {
+	function void print() {
+
+		// line one ----------------------------------
+		
+		do Output.printString("T");
+		do Tutorial.letterPause();
+		do Output.printString("h");
+		do Tutorial.letterPause();
+		do Output.printString("e");
+		do Tutorial.letterPause();
+		
+		do Tutorial.sentencePause();
+
+		do Output.printString("g");
+		do Tutorial.letterPause();
+		do Output.printString("a");
+		do Tutorial.letterPause();
+		do Output.printString("m");
+		do Tutorial.letterPause();
+		do Output.printString("e");
+		do Tutorial.letterPause();
+
+		do Tutorial.sentencePause();
+
+		do Output.printString("i");
+		do Tutorial.letterPause();
+		do Output.printString("s");
+		do Tutorial.letterPause();
+
+		do Tutorial.sentencePause();
+
+		do Output.printString("s");
+		do Tutorial.letterPause();
+		do Output.printString("i");
+		do Tutorial.letterPause();
+		do Output.printString("m");
+		do Tutorial.letterPause();
+		do Output.printString("p");
+		do Tutorial.letterPause();
+		do Output.printString("l");
+		do Tutorial.letterPause();
+		do Output.printString("e");
+		do Tutorial.letterPause();
+		do Output.printString(":");
+		do Tutorial.letterPause();
+
+		do Tutorial.sentencePause();
+
+		do Tutorial.newLine();
+
+		// line two ----------------------------------
+
+		do Output.printString("p");
+		do Tutorial.letterPause();
+		do Output.printString("r");
+		do Tutorial.letterPause();
+		do Output.printString("e");
+		do Tutorial.letterPause();
+		do Output.printString("s");
+		do Tutorial.letterPause();
+		do Output.printString("s");
+		do Tutorial.letterPause();
+
+		do Tutorial.sentencePause();
+
+		do Output.printString("s");
+		do Tutorial.letterPause();
+		do Output.printString("p");
+		do Tutorial.letterPause();
+		do Output.printString("a");
+		do Tutorial.letterPause();
+		do Output.printString("c");
+		do Tutorial.letterPause();
+		do Output.printString("e");
+		do Tutorial.letterPause();
+
+		do Tutorial.sentencePause();
+
+		do Output.printString("t");
+		do Tutorial.letterPause();
+		do Output.printString("o");
+		do Tutorial.letterPause();
+
+		do Tutorial.sentencePause();
+
+		do Output.printString("s");
+		do Tutorial.letterPause();
+		do Output.printString("h");
+		do Tutorial.letterPause();
+		do Output.printString("o");
+		do Tutorial.letterPause();
+		do Output.printString("t");
+		do Tutorial.letterPause();
+		do Output.printString(",");
+		do Tutorial.letterPause();
+
+		do Tutorial.sentencePause();
+
+		do Tutorial.newLine();
+
+		
+
+		// line three ----------------------------------
+
+		do Output.printString("a");
+		do Tutorial.letterPause();
+		do Output.printString("n");
+		do Tutorial.letterPause();
+		do Output.printString("d");
+		do Tutorial.letterPause();
+
+		do Tutorial.sentencePause();
+
+		do Output.printString("y");
+		do Tutorial.letterPause();
+		do Output.printString("o");
+		do Tutorial.letterPause();
+		do Output.printString("u");
+		do Tutorial.letterPause();
+
+		do Tutorial.sentencePause();
+
+		do Output.printString("h");
+		do Tutorial.letterPause();
+		do Output.printString("a");
+		do Tutorial.letterPause();
+		do Output.printString("v");
+		do Tutorial.letterPause();
+		do Output.printString("e");
+		do Tutorial.letterPause();
+
+		do Tutorial.sentencePause();
+
+		do Output.printString("f");
+		do Tutorial.letterPause();
+		do Output.printString("i");
+		do Tutorial.letterPause();
+		do Output.printString("v");
+		do Tutorial.letterPause();
+		do Output.printString("e");
+		do Tutorial.letterPause();
+
+		do Tutorial.sentencePause();
+
+		do Output.printString("m");
+		do Tutorial.letterPause();
+		do Output.printString("i");
+		do Tutorial.letterPause();
+		do Output.printString("s");
+		do Tutorial.letterPause();
+		do Output.printString("s");
+		do Tutorial.letterPause();
+		do Output.printString("e");
+		do Tutorial.letterPause();
+		do Output.printString("s");
+		do Tutorial.letterPause();
+		do Output.printString(".");
+		do Tutorial.letterPause();
+
+
+		do Tutorial.sentencePause();
+
+		do Tutorial.newLine();
+
+		// line four ----------------------------------
+
+		do Tutorial.newLine();
+
+		do Output.printString("G");
+		do Tutorial.letterPause();
+		do Output.printString("O");
+		do Tutorial.letterPause();
+		do Output.printString("O");
+		do Tutorial.letterPause();
+		do Output.printString("D");
+		do Tutorial.letterPause();
+		
+		do Tutorial.sentencePause();
+
+		do Output.printString("L");
+		do Tutorial.letterPause();
+		do Output.printString("U");
+		do Tutorial.letterPause();
+		do Output.printString("C");
+		do Tutorial.letterPause();
+		do Output.printString("K");
+		do Tutorial.letterPause();
+		do Output.printString("!");
+		do Tutorial.letterPause();
+
+		do Tutorial.sentencePause();
+
+		do Tutorial.newLine();
+		do Tutorial.newLine();
+		do Tutorial.newLine();
+
+
+		// ------- delay start --------
+
+		do Output.printString("Get ready...");
+		do Sys.wait(1000);
+		do Output.backSpace();
+		do Sys.wait(1000);
+		do Output.printString(".");
+		do Sys.wait(1000);
+		do Output.backSpace();
+		do Sys.wait(1000);
+		do Output.printString(".");
+		do Sys.wait(1000);
+		do Output.backSpace();
+		do Sys.wait(1000);
+		do Output.printString(".");
+		do Sys.wait(1000);
+
+		// ---------- clean --------------
+		do Screen.clearScreen();
+
+		return;
+	}
+
+	function void letterPause() {
+		do Sys.wait(50);
+		return;
+	}
+
+	function void sentencePause() {
+		do Output.printString(" ");
+		do Sys.wait(100);
+		return;
+	}
+
+	function void newLine() {
+		do Output.println();
+		do Sys.wait(300);
+		return;
+	}
+}

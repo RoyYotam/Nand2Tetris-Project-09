@@ -1,0 +1,86 @@
+class Ball{
+    field int x;
+	field int y;
+	field int speed;
+	
+	constructor Ball new(){
+        
+		let x = 256;
+		let y = 200;
+        let speed = -5;
+
+        do drawBall();
+        return this;
+    }
+
+	method void drawBall() {
+        /*
+            Called once when the level start.
+        */
+
+        // Draw black
+        do Screen.setColor(true);
+        
+        // circle
+        do Screen.drawCircle(x , y , 20);
+		
+		// Draw white
+        do Screen.setColor(false);
+        do Screen.drawCircle(x, y, 15);
+ 
+        // Draw black B
+		do Screen.setColor(true);
+		do Screen.drawRectangle(x - 10,y - 10,x + 5, y - 4) ;
+		do Screen.drawRectangle(x - 10,y - 4,x + 10, y + 10) ;
+		
+		// Draw white inner B
+		do Screen.setColor(false);
+		do Screen.drawRectangle(x - 6,y - 7,x, y + 5) ;
+		do Screen.drawRectangle(x ,y - 2,x + 5, y + 5) ;
+
+		// Draw black B
+		do Screen.setColor(true);
+		do Screen.drawRectangle(x - 10,y - 2,x + 5, y ) ;
+
+        return;
+    }
+
+	method int throwBall(int basketX) {
+		/*
+			return:
+			0 -- missed
+			1 -- scored
+			2 -- still in play
+		*/
+		do clear();
+		let y = y + speed;
+
+		if (y < 80) {
+			// set default values
+			let y = 200;
+
+			do drawBall();
+
+			if ((x - basketX < 20) & (x - basketX > - 20)) {
+				// H-I-T
+				return 1;
+			} else {
+				// L-O-S-E-R
+				return 0;
+			}
+
+		}
+
+		do drawBall();
+		return 2;
+
+	}
+    
+
+	method void clear() {
+		// Draw white
+        do Screen.setColor(false);
+        do Screen.drawCircle(x , y , 20);
+		return;
+	}
+}

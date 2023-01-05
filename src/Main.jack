@@ -1,0 +1,157 @@
+class Main{
+    
+    function void main() {
+        do Main.Game();
+        return;
+    }
+
+    // game consule. 
+    function void Game() {
+        // --- initiating a new game ---
+        var Score score;
+        var boolean gameOn;
+        var int madeDecision;
+        
+        let gameOn = true;
+        let madeDecision = 0;
+        let score = Score.new();
+        
+        // Prints the custom tutorial.
+        // Only once...
+        do Tutorial.print();
+        
+        // Allows playing a few games
+        // Play until ESC is pressed or lives ended. 
+        
+        while (gameOn) {
+            // start / restart the game.
+            let gameOn = Main.gamePlay(score);
+            
+            // GAME OVER messages.
+            do Output.moveCursor(12, 30);
+            do Output.printString("GAME OVER.");
+            do Output.moveCursor(13, 16);
+            do Output.printString("Press anything to play, ESC to quit.");
+            
+            // Waiting for decision.
+            while (((madeDecision = 0)) & (gameOn)) { 
+                let madeDecision = Keyboard.keyPressed();
+            }
+            do Sys.wait(200);
+            
+            // checking if decided to ESC.
+            if (madeDecision = 140) {
+                let gameOn = false;
+            }
+
+            //   --- PREPARING ---
+            do Screen.clearScreen();
+            do score.newGame();
+
+            let madeDecision = 0;
+
+        }
+        return;
+    }
+
+    // ONE GAME
+    function boolean gamePlay(Score score) {
+
+        //game variabels
+        var Basket basket;
+        var Ball ball;
+        var int lives, shotStatus, key;
+        var boolean throwPressed;
+
+        let lives = 5;
+        let shotStatus = 0;
+        let throwPressed = false;
+
+
+        // Create new game's objects.
+        let basket = Basket.new();
+        let ball = Ball.new(); 
+
+        let key = Keyboard.keyPressed();
+
+        // scoreboard
+        do Output.moveCursor(16, 2);
+        do Output.printString("Lives: ");
+        do Output.printInt(lives);
+        do Output.moveCursor(17, 2);
+        do Output.printString("Score: ");
+        do Output.printInt(score.addScore(0));
+        do Output.moveCursor(18, 2);
+        do Output.printString("HighScore: ");
+        do Output.printInt(score.getHighScore());
+        
+        // game cycle.
+        while ((lives > 0) & ~(key = 140) ) {
+            // basket move.
+            do basket.move();
+
+            // throw on SPACE.
+            if (key = 32) {
+                let throwPressed = true;
+            }
+
+            // handling a throw
+            if (throwPressed) {
+                let shotStatus = ball.throwBall(basket.getX());
+
+                // handling a score
+                if (~(shotStatus = 2)) {
+
+                    let throwPressed = false;
+                    
+                    if(shotStatus = 1) {
+                        //increse movement each score() 
+                        do basket.incSpeed(1);
+
+                        // --add score
+                         
+                        do Output.moveCursor(17, 10);
+                        do Output.backSpace();
+		                do Output.printInt(score.addScore(1));
+
+                        do Output.moveCursor(18, 14);
+                        do Output.backSpace();
+                        do Output.printInt(score.getHighScore());
+                        
+                        // handling a miss
+                    } else {
+                        let lives = lives - 1;
+
+                        do Output.moveCursor(16, 10);
+                        do Output.backSpace();
+		                do Output.printInt(lives);
+
+                    }                
+                    
+                }
+            }
+            
+            let key = Keyboard.keyPressed();
+        }
+    
+        do Main.clear(basket, ball);
+
+        // game has finished. bellow we'll find out why
+        if((key = 140) & ~(lives = 0)) { 
+            return false;
+        } else {
+            // game ended properly.
+            return true;
+        }
+        
+    }
+
+    function void clear(Basket basket, Ball ball) {
+        //Clear the screen.
+        do basket.clear();
+        do ball.clear();
+
+        return;
+    }
+
+}

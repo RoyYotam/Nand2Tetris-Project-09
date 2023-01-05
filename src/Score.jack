@@ -1,0 +1,39 @@
+class Score {
+	field int score, highScore;
+
+	constructor Score new() {
+		// initalize.
+		let score = 0;
+		let highScore = 0;
+
+		return this;
+	}
+
+	method void newGame() {
+		/*
+			Reset current score.
+		*/
+		let score = 0;
+		return;
+	}
+
+	method int addScore(int s) {
+		/*
+			Adds score to the current score,
+			return the current Score.
+		*/
+		let score = score + s;
+
+		if (score > highScore) {
+			// If the score is higher than highscore, update highscore.
+			let highScore = score;
+		}
+
+		return score;
+	}
+
+	method int getHighScore() {
+		return highScore;
+	}
+
+}
