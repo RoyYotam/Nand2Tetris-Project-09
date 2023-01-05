@@ -3,7 +3,7 @@ From NAND to tetris course, project 09 (A jack game).
 Nand2Tetris website: http://nand2tetris.org/
 
 ## Description
-A challenging yet addictive shooting game.
+A challenging and addictive shooting - single player game.
 As much as you score, the harder it becomes, will you beat your own high score?
 
 ## Usage
