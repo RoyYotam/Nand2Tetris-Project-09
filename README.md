@@ -39,4 +39,4 @@ If you miss, the game might be over...
 
 Will you be able to stop? 
 
-<kbd>![gameover](./images/gameOver.png)</kbd>
+<kbd>![gameover](./images/gameOver_2.png)</kbd>
