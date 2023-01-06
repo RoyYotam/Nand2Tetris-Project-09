@@ -60,10 +60,10 @@ class Main{
         //game variabels
         var Basket basket;
         var Ball ball;
-        var int lives, shotStatus, key;
+        var int lifes, shotStatus, key;
         var boolean throwPressed;
 
-        let lives = 5;
+        let lifes = 5;
         let shotStatus = 0;
         let throwPressed = false;
 
@@ -76,8 +76,8 @@ class Main{
 
         // scoreboard
         do Output.moveCursor(16, 2);
-        do Output.printString("Lives: ");
-        do Output.printInt(lives);
+        do Output.printString("Lifes: ");
+        do Output.printInt(lifes);
         do Output.moveCursor(17, 2);
         do Output.printString("Score: ");
         do Output.printInt(score.addScore(0));
@@ -86,7 +86,7 @@ class Main{
         do Output.printInt(score.getHighScore());
         
         // game cycle.
-        while ((lives > 0) & ~(key = 140) ) {
+        while ((lifes > 0) & ~(key = 140) ) {
             // basket move.
             do basket.move();
 
@@ -120,11 +120,11 @@ class Main{
                         
                         // handling a miss
                     } else {
-                        let lives = lives - 1;
+                        let lifes = lifes - 1;
 
                         do Output.moveCursor(16, 10);
                         do Output.backSpace();
-		                do Output.printInt(lives);
+		                do Output.printInt(lifes);
 
                     }                
                     
@@ -137,7 +137,7 @@ class Main{
         do Main.clear(basket, ball);
 
         // game has finished. bellow we'll find out why
-        if((key = 140) & ~(lives = 0)) { 
+        if((key = 140) & ~(lifes = 0)) { 
             return false;
         } else {
             // game ended properly.

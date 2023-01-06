@@ -1,13 +1,16 @@
 class Ball{
     field int x;
 	field int y;
+	field int textLine, textColumn;
 	field int speed;
 	
 	constructor Ball new(){
         
-		let x = 256;
+		let x = 258;
 		let y = 200;
-        let speed = -5;
+		let textLine = 18;
+		let textColumn = 31;
+        let speed = -10;
 
         do drawBall();
         return this;
@@ -27,20 +30,10 @@ class Ball{
 		// Draw white
         do Screen.setColor(false);
         do Screen.drawCircle(x, y, 15);
- 
-        // Draw black B
-		do Screen.setColor(true);
-		do Screen.drawRectangle(x - 10,y - 10,x + 5, y - 4) ;
-		do Screen.drawRectangle(x - 10,y - 4,x + 10, y + 10) ;
-		
-		// Draw white inner B
-		do Screen.setColor(false);
-		do Screen.drawRectangle(x - 6,y - 7,x, y + 5) ;
-		do Screen.drawRectangle(x ,y - 2,x + 5, y + 5) ;
 
-		// Draw black B
-		do Screen.setColor(true);
-		do Screen.drawRectangle(x - 10,y - 2,x + 5, y ) ;
+        // Giving the ball a cool look.
+        do Output.moveCursor(textLine, textColumn);
+        do Output.printString("NBA");
 
         return;
     }
@@ -54,10 +47,12 @@ class Ball{
 		*/
 		do clear();
 		let y = y + speed;
+		let textLine = textLine - 1;
 
 		if (y < 80) {
 			// set default values
 			let y = 200;
+			let textLine = 18;
 
 			do drawBall();
 
