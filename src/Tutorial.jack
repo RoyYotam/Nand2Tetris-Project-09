@@ -1,219 +1,130 @@
 class Tutorial {
 	function void print() {
 
+		var String firstLine;
+		var String secondLine;
+		var String thirdLine;
+		var String fourthLine;
+		var String delayStartLine;
+
+		var int index;
+		var int skip;
+
+		let index = 0;
+		let skip = 0;
+
 		// line one ----------------------------------
+
+		let firstLine = "The game is simple:";
 		
-		do Output.printString("T");
-		do Tutorial.letterPause();
-		do Output.printString("h");
-		do Tutorial.letterPause();
-		do Output.printString("e");
-		do Tutorial.letterPause();
-		
-		do Tutorial.sentencePause();
 
-		do Output.printString("g");
-		do Tutorial.letterPause();
-		do Output.printString("a");
-		do Tutorial.letterPause();
-		do Output.printString("m");
-		do Tutorial.letterPause();
-		do Output.printString("e");
-		do Tutorial.letterPause();
+		while((firstLine.length() > index) & (~(skip = 32))) {
+			do Output.printChar(firstLine.charAt(index));
+			do Tutorial.letterPause();
+			let index = index + 1;
+			let skip = Keyboard.keyPressed();
+		}
 
-		do Tutorial.sentencePause();
+		if (~(skip = 32)) {
+			// avoid waiting when trying to skip.
+			do Tutorial.newLine();
+		}
 
-		do Output.printString("i");
-		do Tutorial.letterPause();
-		do Output.printString("s");
-		do Tutorial.letterPause();
-
-		do Tutorial.sentencePause();
-
-		do Output.printString("s");
-		do Tutorial.letterPause();
-		do Output.printString("i");
-		do Tutorial.letterPause();
-		do Output.printString("m");
-		do Tutorial.letterPause();
-		do Output.printString("p");
-		do Tutorial.letterPause();
-		do Output.printString("l");
-		do Tutorial.letterPause();
-		do Output.printString("e");
-		do Tutorial.letterPause();
-		do Output.printString(":");
-		do Tutorial.letterPause();
-
-		do Tutorial.sentencePause();
-
-		do Tutorial.newLine();
+		do firstLine.dispose();
 
 		// line two ----------------------------------
 
-		do Output.printString("p");
-		do Tutorial.letterPause();
-		do Output.printString("r");
-		do Tutorial.letterPause();
-		do Output.printString("e");
-		do Tutorial.letterPause();
-		do Output.printString("s");
-		do Tutorial.letterPause();
-		do Output.printString("s");
-		do Tutorial.letterPause();
+		let index = 0;
+		let secondLine = "press space to shoot,";
 
-		do Tutorial.sentencePause();
+		while((secondLine.length() > index) & (~(skip = 32))) {
+			do Output.printChar(secondLine.charAt(index));
+			do Tutorial.letterPause();
+			let index = index + 1;
+			let skip = Keyboard.keyPressed();
+		}
+		
+		if (~(skip = 32)) {
+			// avoid waiting when trying to skip.
+			do Tutorial.newLine();
+		}
 
-		do Output.printString("s");
-		do Tutorial.letterPause();
-		do Output.printString("p");
-		do Tutorial.letterPause();
-		do Output.printString("a");
-		do Tutorial.letterPause();
-		do Output.printString("c");
-		do Tutorial.letterPause();
-		do Output.printString("e");
-		do Tutorial.letterPause();
-
-		do Tutorial.sentencePause();
-
-		do Output.printString("t");
-		do Tutorial.letterPause();
-		do Output.printString("o");
-		do Tutorial.letterPause();
-
-		do Tutorial.sentencePause();
-
-		do Output.printString("s");
-		do Tutorial.letterPause();
-		do Output.printString("h");
-		do Tutorial.letterPause();
-		do Output.printString("o");
-		do Tutorial.letterPause();
-		do Output.printString("o");
-		do Tutorial.letterPause();
-		do Output.printString("t");
-		do Tutorial.letterPause();
-		do Output.printString(",");
-		do Tutorial.letterPause();
-
-		do Tutorial.sentencePause();
-
-		do Tutorial.newLine();
-
+		do secondLine.dispose();
 		
 
 		// line three ----------------------------------
 
-		do Output.printString("a");
-		do Tutorial.letterPause();
-		do Output.printString("n");
-		do Tutorial.letterPause();
-		do Output.printString("d");
-		do Tutorial.letterPause();
+		let index = 0;
+		let thirdLine = "and you have five misses.";
 
-		do Tutorial.sentencePause();
+		while((thirdLine.length() > index) & (~(skip = 32))) {
+			do Output.printChar(thirdLine.charAt(index));
+			do Tutorial.letterPause();
+			let index = index + 1;
+			let skip = Keyboard.keyPressed();
+		}
+		
+		if (~(skip = 32)) {
+			// avoid waiting when trying to skip.
+			do Tutorial.newLine();
+		}
 
-		do Output.printString("y");
-		do Tutorial.letterPause();
-		do Output.printString("o");
-		do Tutorial.letterPause();
-		do Output.printString("u");
-		do Tutorial.letterPause();
-
-		do Tutorial.sentencePause();
-
-		do Output.printString("h");
-		do Tutorial.letterPause();
-		do Output.printString("a");
-		do Tutorial.letterPause();
-		do Output.printString("v");
-		do Tutorial.letterPause();
-		do Output.printString("e");
-		do Tutorial.letterPause();
-
-		do Tutorial.sentencePause();
-
-		do Output.printString("f");
-		do Tutorial.letterPause();
-		do Output.printString("i");
-		do Tutorial.letterPause();
-		do Output.printString("v");
-		do Tutorial.letterPause();
-		do Output.printString("e");
-		do Tutorial.letterPause();
-
-		do Tutorial.sentencePause();
-
-		do Output.printString("m");
-		do Tutorial.letterPause();
-		do Output.printString("i");
-		do Tutorial.letterPause();
-		do Output.printString("s");
-		do Tutorial.letterPause();
-		do Output.printString("s");
-		do Tutorial.letterPause();
-		do Output.printString("e");
-		do Tutorial.letterPause();
-		do Output.printString("s");
-		do Tutorial.letterPause();
-		do Output.printString(".");
-		do Tutorial.letterPause();
-
-
-		do Tutorial.sentencePause();
-
-		do Tutorial.newLine();
+		do thirdLine.dispose();
 
 		// line four ----------------------------------
 
-		do Tutorial.newLine();
+		let index = 0;
+		let fourthLine = "GOOD LUCK!";
 
-		do Output.printString("G");
-		do Tutorial.letterPause();
-		do Output.printString("O");
-		do Tutorial.letterPause();
-		do Output.printString("O");
-		do Tutorial.letterPause();
-		do Output.printString("D");
-		do Tutorial.letterPause();
+		if (~(skip = 32)) {
+			// avoid waiting when trying to skip.
+			do Tutorial.newLine();
+		}
+
+		while((fourthLine.length() > index) & (~(skip = 32))) {
+			do Output.printChar(fourthLine.charAt(index));
+			do Tutorial.letterPause();
+			let index = index + 1;
+			let skip = Keyboard.keyPressed();
+		}
 		
-		do Tutorial.sentencePause();
-
-		do Output.printString("L");
-		do Tutorial.letterPause();
-		do Output.printString("U");
-		do Tutorial.letterPause();
-		do Output.printString("C");
-		do Tutorial.letterPause();
-		do Output.printString("K");
-		do Tutorial.letterPause();
-		do Output.printString("!");
-		do Tutorial.letterPause();
-
-		do Tutorial.sentencePause();
-
 		do Tutorial.newLine();
-		do Tutorial.newLine();
-		do Tutorial.newLine();
+
+		do fourthLine.dispose();
 
 
 		// ------- delay start --------
 
-		do Output.printString("Get ready...");
-		do Sys.wait(1000);
-		do Output.backSpace();
-		do Sys.wait(1000);
-		do Output.printString(".");
-		do Sys.wait(1000);
-		do Output.backSpace();
-		do Sys.wait(1000);
-		do Output.printString(".");
-		do Sys.wait(1000);
-		do Output.backSpace();
-		do Sys.wait(1000);
-		do Output.printString(".");
-		do Sys.wait(1000);
+		let index = 0;
+		let delayStartLine = "get ready.....";
+
+
+		if (~(skip = 32)) {
+			// avoid waiting when trying to skip.
+			do Tutorial.newLine();
+			do Tutorial.newLine();
+			do Tutorial.newLine();
+		}
+		
+
+		while((delayStartLine.length() > index) & (~(skip = 32))) {
+			
+			do Output.printChar(delayStartLine.charAt(index));
+			
+			if (delayStartLine.charAt(index) = 46) {  // 46 is dot.
+				// slow writing dots gives loading effect.
+				do Tutorial.delayPause();
+			} else {
+				do Tutorial.letterPause();
+			}
+			
+
+			let index = index + 1;
+			let skip = Keyboard.keyPressed();
+		}
+
+		do delayStartLine.dispose();
+
 
 		// ---------- clean --------------
 		do Screen.clearScreen();
@@ -226,11 +137,11 @@ class Tutorial {
 		return;
 	}
 
-	function void sentencePause() {
-		do Output.printString(" ");
-		do Sys.wait(100);
+	function void delayPause() {
+		do Sys.wait(1000);
 		return;
 	}
+
 
 	function void newLine() {
 		do Output.println();
