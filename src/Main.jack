@@ -86,7 +86,7 @@ class Main{
         do Output.printInt(score.getHighScore());
         
         // game cycle.
-        while ((lifes > 0) & ~(key = 140) ) {
+        while ((lifes > 0) & ~(key = 140) & ~(key = 82) ) {
             // basket move.
             do basket.move();
 
