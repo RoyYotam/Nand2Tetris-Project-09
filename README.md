@@ -15,8 +15,7 @@ The game is simple: The goal is to score as many points as you can. In each game
 Each miss reduces your life-count by one. Every score awards you with a point.
 Use the space bar to throw the ball, and ESC to quit.
 
-Note: Currently the highest score you can achieve is 9 points.
-My best score is 8, can you beat my record?
+Note: My best score is 11, can you beat my record?
 
 
 ## Demo of game
@@ -39,4 +38,4 @@ If you miss, the game might be over...
 
 Will you be able to stop? 
 
-<kbd>![gameover](./images/gameOver_2.png)</kbd>
+<kbd>![gameover](./images/gameOver.png)</kbd>
