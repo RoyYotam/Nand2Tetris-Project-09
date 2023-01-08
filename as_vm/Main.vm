@@ -271,6 +271,11 @@ push constant 140
 eq
 not
 and
+push local 4
+push constant 82
+eq
+not
+and
 not
 if-goto WHILE_END0
 push local 0
