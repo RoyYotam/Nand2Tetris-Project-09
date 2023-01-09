@@ -18,8 +18,9 @@ class Ball{
 
 	method void drawBall() {
         /*
-            Called once when the level start.
+            Called every time the ball is moving.
         */
+        var String nbaString;
 
         // Draw black
         do Screen.setColor(true);
@@ -33,7 +34,11 @@ class Ball{
 
         // Giving the ball a cool look.
         do Output.moveCursor(textLine, textColumn);
-        do Output.printString("NBA");
+
+        // We will assign the 'NBA' as a string so we will be able to dispose the string.
+        let nbaString = "NBA";
+        do Output.printString(nbaString);
+        do nbaString.dispose();
 
         return;
     }

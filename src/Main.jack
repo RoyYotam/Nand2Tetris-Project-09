@@ -11,6 +11,7 @@ class Main{
         var Score score;
         var boolean gameOn;
         var int madeDecision;
+        var String gameOverLabel, gameOverSentence;
         
         let gameOn = true;
         let madeDecision = 0;
@@ -29,9 +30,16 @@ class Main{
             
             // GAME OVER messages.
             do Output.moveCursor(12, 30);
-            do Output.printString("GAME OVER.");
+            
+            // We will re-assign the string each time to reduce the memory use.
+            let gameOverLabel = "GAME OVER.";
+            do Output.printString(gameOverLabel);
+            do gameOverLabel.dispose();
+
             do Output.moveCursor(13, 16);
-            do Output.printString("Press anything to play, ESC to quit.");
+            let gameOverSentence = "Press anything to play, ESC to quit.";
+            do Output.printString(gameOverSentence);
+            do gameOverSentence.dispose();
             
             // Waiting for decision.
             while (((madeDecision = 0)) & (gameOn)) { 
@@ -62,6 +70,7 @@ class Main{
         var Ball ball;
         var int lifes, shotStatus, key;
         var boolean throwPressed;
+        var String statsLifeLabel, statsScoreLabel, statsHighScoreLabel;
 
         let lifes = 5;
         let shotStatus = 0;
@@ -76,13 +85,25 @@ class Main{
 
         // scoreboard
         do Output.moveCursor(16, 2);
-        do Output.printString("Lifes: ");
+
+        let statsLifeLabel = "Lifes: ";
+        do Output.printString(statsLifeLabel);
+        do statsLifeLabel.dispose();
+
         do Output.printInt(lifes);
         do Output.moveCursor(17, 2);
-        do Output.printString("Score: ");
+
+        let statsScoreLabel = "Score: ";
+        do Output.printString(statsScoreLabel);
+        do statsScoreLabel.dispose();
+
         do Output.printInt(score.addScore(0));
         do Output.moveCursor(18, 2);
-        do Output.printString("HighScore: ");
+        
+        let statsHighScoreLabel = "HighScore: ";
+        do Output.printString(statsHighScoreLabel);
+        do statsHighScoreLabel.dispose();
+
         do Output.printInt(score.getHighScore());
         
         // game cycle.
