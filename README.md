@@ -38,4 +38,4 @@ If you miss, the game might be over...
 
 Will you be able to stop? 
 
-<kbd>![gameover](./images/newHighScore.png)</kbd>
+<kbd>![gameover](./images/myNewHighScore.png)</kbd>
